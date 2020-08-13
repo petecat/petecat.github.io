@@ -77,6 +77,168 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello Markdown</title>
+    <url>/2020/08/13/hello-markdown/</url>
+    <content><![CDATA[<p>了解清楚了markdown语法，才能用好hexo。</p>
+<a id="more"></a>
+
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><p><code># 一级标题</code></p>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p><code>## 二级标题</code></p>
+<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p><code>### 三级标题</code></p>
+<h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><p><code>#### 四级标题</code></p>
+<h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><p><code>##### 五级标题</code></p>
+<h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p><code>###### 六级标题</code></p>
+<h6 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h6><p>两个空格换行  </p>
+<h6 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a><strong>加粗</strong></h6><p><code>**加粗**</code>  </p>
+<h6 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a><em>斜体</em></h6><p><code>*斜体*</code>  </p>
+<h6 id="斜体加粗"><a href="#斜体加粗" class="headerlink" title="斜体加粗"></a><strong><em>斜体加粗</em></strong></h6><p><code>***斜体加粗***</code>   </p>
+<h6 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a><del>删除线</del></h6><p><code>~~删除线~~</code>  </p>
+<h6 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h6><blockquote>
+<p>1引用的内容</p>
+<blockquote>
+<p>2引用的内容</p>
+<blockquote>
+<p>3引用的内容</p>
+<blockquote>
+<p>4引用的内容</p>
+<blockquote>
+<p>5引用的内容</p>
+<blockquote>
+<p>6应用的内容</p>
+<blockquote>
+<p>7应用的内容</p>
+<blockquote>
+<p>8引用的内容</p>
+<blockquote>
+<p>9引用的内容</p>
+<blockquote>
+<p>10引用的内容</p>
+<blockquote>
+<p>11引用的内容</p>
+<blockquote>
+<p>12引用的内容</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;1引用的内容</span><br><span class="line">&gt;&gt;2引用的内容</span><br><span class="line">&gt;&gt;&gt;3引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;4引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;5引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;6应用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;7应用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;8引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;9引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;10引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;11引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;12引用的内容</span><br></pre></td></tr></table></figure>
+
+<h6 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h6><p><img src="http://lastfm-img2.akamaized.net/i/u/300x300/9b9cb92ec0414901c9920a14c8cd0763.jpg" alt="petecat" title="皮特猫"><br><code>![petecat](http://lastfm-img2.akamaized.net/i/u/300x300/9b9cb92ec0414901c9920a14c8cd0763.jpg &quot;皮特猫&quot;)</code></p>
+<h6 id="超级链接"><a href="#超级链接" class="headerlink" title="超级链接"></a>超级链接</h6><p><a href="http://petecat.io/">超级链接-皮特猫</a><br><code>[超级链接-皮特猫](http://petecat.io)</code></p>
+<h6 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h6><ul>
+<li>无序列表内容</li>
+</ul>
+<ul>
+<li>无序列表内容</li>
+</ul>
+<ul>
+<li>无序列表内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表内容</span><br><span class="line">+ 无序列表内容</span><br><span class="line">* 无序列表内容</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h6 id="无序列表-1"><a href="#无序列表-1" class="headerlink" title="无序列表"></a>无序列表</h6><ul>
+<li>无序列表内容</li>
+<li>无序列表内容</li>
+<li>无序列表内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表内容</span><br><span class="line">- 无序列表内容</span><br><span class="line">- 无序列表内容</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h6 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h6><ol>
+<li>有序列表内容</li>
+<li>有序列表内容</li>
+<li>有序列表内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 有序列表内容</span><br><span class="line">2. 有序列表内容</span><br><span class="line">3. 有序列表内容</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h6 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h6><ul>
+<li>无序列表内容<ul>
+<li>子序列</li>
+<li>子序列</li>
+<li>子序列</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>无序列表内容<ul>
+<li>子序列</li>
+<li>子序列</li>
+<li>子序列</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>无序列表内容<ul>
+<li>子序列</li>
+<li>子序列</li>
+<li>子序列<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表内容</span><br><span class="line">   - 子序列</span><br><span class="line">   - 子序列</span><br><span class="line">   - 子序列</span><br><span class="line">+ 无序列表内容</span><br><span class="line">   - 子序列</span><br><span class="line">   - 子序列</span><br><span class="line">   - 子序列</span><br><span class="line">* 无序列表内容</span><br><span class="line">   - 子序列</span><br><span class="line">   - 子序列</span><br><span class="line">   - 子序列</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><table>
+<thead>
+<tr>
+<th>标题</th>
+<th>标题</th>
+<th>标题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文本</td>
+<td>文本</td>
+<td>文本</td>
+</tr>
+<tr>
+<td>文本</td>
+<td>文本</td>
+<td>文本</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 标题 | 标题 | 标题 |</span><br><span class="line">| --- | --- | --- |</span><br><span class="line">| 文本 | 文本 | 文本 |</span><br><span class="line">| 文本 | 文本 | 文本 |</span><br></pre></td></tr></table></figure>
+
+<h6 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h6><h6 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h6><p><code>void main(void)</code>  </p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">`void main(void)`</span><br></pre></td></tr></table></figure>
+<h6 id="代码块1"><a href="#代码块1" class="headerlink" title="代码块1"></a>代码块1</h6><pre><code>function fun() &#123;
+    echo &quot;hello world.&quot;;
+&#125;
+fun();</code></pre>
+<h6 id="代码块2"><a href="#代码块2" class="headerlink" title="代码块2"></a>代码块2</h6><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">function fun() &#123;</span><br><span class="line">    echo <span class="string">&quot;hello world.&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
+<h6 id="代码块3"><a href="#代码块3" class="headerlink" title="代码块3"></a>代码块3</h6><pre><code>
+function fun() &#123;
+    echo "hello world.";
+&#125;
+fun();
+</code></pre>  
+
+<h6 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h6><pre><code class="flow">st=&gt;start: Start|past:&gt;http://www.baidu.com
+e=&gt;end:  Ende|future:&gt;http://www.baidu.com
+op1=&gt;operation:  My Operation
+op2=&gt;operation:  Stuff|current
+sub1=&gt;subroutine:  My Subroutine|invalid
+cond=&gt;condition:  Yes or No|approved:&gt;http://www.google.com
+c2=&gt;condition:  Good idea|rejected
+io=&gt;inputoutput:  catch something...|future
+st-&gt;op1(right)-&gt;cond
+cond(yes, right)-&gt;c2
+cond(no)-&gt;sub1(left)-&gt;op1
+c2(yes)-&gt;io-&gt;e
+c2(no)-&gt;op2-&gt;e
+&amp;```</code></pre>
+]]></content>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/08/12/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
