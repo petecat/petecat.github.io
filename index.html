@@ -234,7 +234,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/centos8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/13/centos8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.128.png">
@@ -250,7 +250,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/08/12/centos8/" class="post-title-link" itemprop="url">Centos8 服务器环境搭建</a>
+            <a href="/2020/08/13/centos8/" class="post-title-link" itemprop="url">Centos8 服务器环境搭建</a>
         </h2>
 
         <div class="post-meta">
@@ -259,9 +259,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-08-12 22:42:09 / 修改时间：22:42:03" itemprop="dateCreated datePublished" datetime="2020-08-12T22:42:09+08:00">2020-08-12</time>
+              <time title="创建时间：2020-08-13 14:34:46" itemprop="dateCreated datePublished" datetime="2020-08-13T14:34:46+08:00">2020-08-13</time>
             </span>
 
           
@@ -273,72 +272,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><h5 id="安装Yum-Repository："><a href="#安装Yum-Repository：" class="headerlink" title="安装Yum Repository："></a>安装Yum Repository：</h5><p><code>wget https://repo.mysql.com//mysql80-community-release-el8-1.noarch.rpm</code></p>
-<h5 id="使用rpm来安装MySQL"><a href="#使用rpm来安装MySQL" class="headerlink" title="使用rpm来安装MySQL"></a>使用rpm来安装MySQL</h5><p><code>rpm -ivh mysql80-community-release-el8-1.noarch.rpm</code></p>
-<h5 id="使用yum安装mysql服务"><a href="#使用yum安装mysql服务" class="headerlink" title="使用yum安装mysql服务"></a>使用yum安装mysql服务</h5><p><code>yum install mysql-server</code></p>
-<h5 id="检查是否已经设置为开机启动MySQL服务"><a href="#检查是否已经设置为开机启动MySQL服务" class="headerlink" title="检查是否已经设置为开机启动MySQL服务"></a>检查是否已经设置为开机启动MySQL服务</h5><p><code>systemctl list-unit-files|grep mysqld</code></p>
-<h5 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h5><p><code>systemctl enable mysqld.service</code></p>
-<h5 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h5><p><code>systemctl start mysqld.service</code></p>
-<h5 id="MySQL-安装过程中会为-root-用户生成一个临时密码，先找到mysqld-log文件"><a href="#MySQL-安装过程中会为-root-用户生成一个临时密码，先找到mysqld-log文件" class="headerlink" title="MySQL 安装过程中会为 root 用户生成一个临时密码，先找到mysqld.log文件"></a>MySQL 安装过程中会为 root 用户生成一个临时密码，先找到mysqld.log文件</h5><p><code>find -name mysqld.log</code></p>
-<h5 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h5><p><code>sudo grep &#39;temporary password&#39; /var/log/mysqld.log</code></p>
-<h5 id="进入mysql-修改密码"><a href="#进入mysql-修改密码" class="headerlink" title="进入mysql 修改密码"></a>进入mysql 修改密码</h5><p><code>mysql -u root -p</code><br><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;your passowrd&#39;; </code></p>
-<h5 id="可以运行安全设置向导脚本，来修改安全选项"><a href="#可以运行安全设置向导脚本，来修改安全选项" class="headerlink" title="可以运行安全设置向导脚本，来修改安全选项"></a>可以运行安全设置向导脚本，来修改安全选项</h5><p><code>sudo mysql_secure_installation</code></p>
-<h5 id="创建远程账号设置密码"><a href="#创建远程账号设置密码" class="headerlink" title="创建远程账号设置密码"></a>创建远程账号设置密码</h5><p><code>create user &#39;username&#39;@&#39;%&#39; identified by &#39;your_password&#39;;</code></p>
-<h5 id="创建本地账号"><a href="#创建本地账号" class="headerlink" title="创建本地账号"></a>创建本地账号</h5><p><code>create user &#39;username&#39;@&#39;localhost&#39; identified by &#39;your_password&#39;;</code></p>
-<h5 id="查看mysql所有用户和用户权限"><a href="#查看mysql所有用户和用户权限" class="headerlink" title="查看mysql所有用户和用户权限"></a>查看mysql所有用户和用户权限</h5><p><code>SELECT DISTINCT CONCAT(&#39;User: &#39;&#39;&#39;,user,&#39;&#39;&#39;@&#39;&#39;&#39;,host,&#39;&#39;&#39;;&#39;) AS query FROM mysql.user;</code></p>
-<h5 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h5><p><code>create database database_name;</code></p>
-<h5 id="赋予用户指定数据库的远程访问权限"><a href="#赋予用户指定数据库的远程访问权限" class="headerlink" title="赋予用户指定数据库的远程访问权限"></a>赋予用户指定数据库的远程访问权限</h5><p><code>grant all privileges on database_name.* to &#39;username&#39;@&#39;%&#39;;</code></p>
-<h5 id="删除远程用户"><a href="#删除远程用户" class="headerlink" title="删除远程用户"></a>删除远程用户</h5><p><code>drop user &#39;user&#39;@&#39;%&#39;;</code></p>
-<h5 id="mysql8-0使用的身份验证插件为：caching-sha2-password，客户端工具使用的身份验证插件仍是mysql-native-password，解决："><a href="#mysql8-0使用的身份验证插件为：caching-sha2-password，客户端工具使用的身份验证插件仍是mysql-native-password，解决：" class="headerlink" title="mysql8.0使用的身份验证插件为：caching_sha2_password，客户端工具使用的身份验证插件仍是mysql_native_password，解决："></a>mysql8.0使用的身份验证插件为：caching_sha2_password，客户端工具使用的身份验证插件仍是mysql_native_password，解决：</h5><h5 id="修改mysql-user中的加密方式"><a href="#修改mysql-user中的加密方式" class="headerlink" title="修改mysql.user中的加密方式,　　　　　"></a>修改mysql.user中的加密方式,　　　　　</h5><p><code>alter user &#39;root&#39;@&#39;%&#39; identified with mysql_native_password by &#39;root密码&#39;;</code></p>
-<h5 id="查看端口"><a href="#查看端口" class="headerlink" title="查看端口"></a>查看端口</h5><p><code>show global variables like &#39;port&#39;;</code><br><code>/etc/my.cnf.d/mysql-server.cnf </code></p>
-<h5 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h5><p><code>[mysqld]</code><br><code>port=7100</code></p>
-<h5 id="重启mysql"><a href="#重启mysql" class="headerlink" title="重启mysql"></a>重启mysql</h5><p><code>service mysqld restart</code></p>
-<hr>
-<h4 id="redis-安装"><a href="#redis-安装" class="headerlink" title="redis 安装"></a>redis 安装</h4><p><code>wget http://download.redis.io/releases/redis-5.0.7.tar.gz</code></p>
-<h5 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h5><p><code>tar -xvf redis-5.0.5.tar.gz</code><br><code>cd redis-5.0.5/</code></p>
-<h5 id="编译测试"><a href="#编译测试" class="headerlink" title="编译测试"></a>编译测试</h5><p><code>make test</code></p>
-<h5 id="有可能需要"><a href="#有可能需要" class="headerlink" title="有可能需要"></a>有可能需要</h5><p><code>yum -y install gcc automake autoconf libtool make</code><br><code>yum install gcc gcc-c++</code></p>
-<h5 id="报出信息，需要安装tcl"><a href="#报出信息，需要安装tcl" class="headerlink" title="报出信息，需要安装tcl"></a>报出信息，需要安装tcl</h5><p><code>You need tcl 8.5 or newer in order to run the Redis test</code></p>
-<p><code>sudo tar xzvf tcl8.6.1-src.tar.gz  -C /usr/local/</code><br><code>cd  /usr/local/tcl8.6.1/unix/</code><br><code>sudo ./configure</code><br><code>sudo make</code><br><code>sudo make install </code></p>
-<h5 id="重新回到"><a href="#重新回到" class="headerlink" title="重新回到"></a>重新回到</h5><p><code>cd redis-5.0.5/</code></p>
-<h5 id="重新执行"><a href="#重新执行" class="headerlink" title="重新执行"></a>重新执行</h5><p><code>make test</code></p>
-<h5 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h5><p><code>make </code></p>
-<h5 id="安装，安装到指定目录"><a href="#安装，安装到指定目录" class="headerlink" title="安装，安装到指定目录"></a>安装，安装到指定目录</h5><p><code>make PREFIX=/usr/local/redis install</code></p>
-<h5 id="复杂配置文件到安装目录"><a href="#复杂配置文件到安装目录" class="headerlink" title="复杂配置文件到安装目录"></a>复杂配置文件到安装目录</h5><p><code>cp redis.conf /usr/local/redis</code></p>
-<p><code>cd /usr/local/redis/</code></p>
-<p><code>mkdir log</code></p>
-<h5 id="编辑redis-conf"><a href="#编辑redis-conf" class="headerlink" title="编辑redis.conf"></a>编辑redis.conf</h5><h5 id="以daemon方式独立运行"><a href="#以daemon方式独立运行" class="headerlink" title="以daemon方式独立运行"></a>以daemon方式独立运行</h5><p><code>daemonize yes</code></p>
-<h5 id="注释掉bind-127-0-0-1可以使所有的ip访问redis"><a href="#注释掉bind-127-0-0-1可以使所有的ip访问redis" class="headerlink" title="注释掉bind 127.0.0.1可以使所有的ip访问redis"></a>注释掉bind 127.0.0.1可以使所有的ip访问redis</h5><h5 id="若是想指定多个ip访问，但并不是全部的ip访问，可以bind"><a href="#若是想指定多个ip访问，但并不是全部的ip访问，可以bind" class="headerlink" title="若是想指定多个ip访问，但并不是全部的ip访问，可以bind"></a>若是想指定多个ip访问，但并不是全部的ip访问，可以bind</h5><h6 id="redis3-2之后，redis增加了protected-mode，在这个模式下，即使注释掉了bind-127-0-0-1，再访问redisd时候还是报错"><a href="#redis3-2之后，redis增加了protected-mode，在这个模式下，即使注释掉了bind-127-0-0-1，再访问redisd时候还是报错" class="headerlink" title="redis3.2之后，redis增加了protected-mode，在这个模式下，即使注释掉了bind 127.0.0.1，再访问redisd时候还是报错"></a>redis3.2之后，redis增加了protected-mode，在这个模式下，即使注释掉了bind 127.0.0.1，再访问redisd时候还是报错</h6><p><code>protected-mode no</code></p>
-<h5 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h5><p><code>requirepass your_password</code></p>
-<h5 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h5><p><code>./bin/redis-server ./redis.conf</code></p>
-<h5 id="查看redis启动是否成功"><a href="#查看redis启动是否成功" class="headerlink" title="查看redis启动是否成功"></a>查看redis启动是否成功</h5><p><code>ps aux | grep redis</code></p>
-<hr>
-<h4 id="apache-tomcat-8-5-51-tar"><a href="#apache-tomcat-8-5-51-tar" class="headerlink" title="apache-tomcat-8.5.51.tar"></a>apache-tomcat-8.5.51.tar</h4><h5 id="java路径"><a href="#java路径" class="headerlink" title="java路径"></a>java路径</h5><p><code>which java</code></p>
-<h5 id="java-版本"><a href="#java-版本" class="headerlink" title="java 版本"></a>java 版本</h5><p><code>java -version</code></p>
-<h5 id="离线下载jdk"><a href="#离线下载jdk" class="headerlink" title="离线下载jdk"></a>离线下载jdk</h5><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p><code>rpm -ivh jdk-8u91-linux-x64.rpm</code></p>
-<h5 id="检查是否安装成功"><a href="#检查是否安装成功" class="headerlink" title="检查是否安装成功"></a>检查是否安装成功</h5><p><code>java -version</code></p>
-<h5 id="可以成功执行javac、java-–version操作，不需要JDK环境变量的配置"><a href="#可以成功执行javac、java-–version操作，不需要JDK环境变量的配置" class="headerlink" title="可以成功执行javac、java –version操作，不需要JDK环境变量的配置"></a>可以成功执行javac、java –version操作，不需要JDK环境变量的配置</h5><h5 id="否则-etc-profile-末尾追加以下内容"><a href="#否则-etc-profile-末尾追加以下内容" class="headerlink" title="否则 /etc/profile 末尾追加以下内容:"></a>否则 /etc/profile 末尾追加以下内容:</h5><p><code>export JAVA_HOME=/usr/java/default</code><br><code>export PATH=$JAVA_HOME/bin:$PATH</code><br><code>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</code></p>
-<h5 id="重新加载环境变量使配置生效"><a href="#重新加载环境变量使配置生效" class="headerlink" title="重新加载环境变量使配置生效"></a>重新加载环境变量使配置生效</h5><p><code>source /etc/profile</code></p>
-<h5 id="查看是否配置成功"><a href="#查看是否配置成功" class="headerlink" title="查看是否配置成功"></a>查看是否配置成功</h5><p><code>echo $JAVA_HOME</code></p>
-<h5 id="webapps-下面的文件都可以删除"><a href="#webapps-下面的文件都可以删除" class="headerlink" title="/webapps 下面的文件都可以删除"></a>/webapps 下面的文件都可以删除</h5><h5 id="修改-conf-logging-properties"><a href="#修改-conf-logging-properties" class="headerlink" title="修改 conf/logging.properties"></a>修改 conf/logging.properties</h5><h5 id="handle-中需要删除的部分，注意后面的符号"><a href="#handle-中需要删除的部分，注意后面的符号" class="headerlink" title="handle 中需要删除的部分，注意后面的符号"></a>handle 中需要删除的部分，注意后面的符号</h5><p><code>3manager.org.apache.juli.AsyncFileHandler, </code><br><code>4host-manager.org.apache.juli.AsyncFileHandler,</code>  </p>
-<p><code>handlers = 1catalina.org.apache.juli.AsyncFileHandler,</code><br><code>2localhost.org.apache.juli.AsyncFileHandler,</code><br><code>3manager.org.apache.juli.AsyncFileHandler, </code><br><code>4host-manager.org.apache.juli.AsyncFileHandler,java.util.logging.ConsoleHandler</code></p>
-<h5 id="Handler-specific-properties-中需要删除的部分"><a href="#Handler-specific-properties-中需要删除的部分" class="headerlink" title="Handler specific properties 中需要删除的部分"></a>Handler specific properties 中需要删除的部分</h5><h6 id="如下所示"><a href="#如下所示" class="headerlink" title="如下所示"></a>如下所示</h6><p><code>3manager.org.apache.juli.AsyncFileHandler.level = FINE</code><br><code>3manager.org.apache.juli.AsyncFileHandler.directory = $&#123;catalina.base&#125;/logs</code><br><code>3manager.org.apache.juli.AsyncFileHandler.prefix = manager.</code>  </p>
-<p><code>4host-manager.org.apache.juli.AsyncFileHandler.level = FINE</code><br><code>4host-manager.org.apache.juli.AsyncFileHandler.directory = $&#123;catalina.base&#125;/logs</code><br><code>4host-manager.org.apache.juli.AsyncFileHandler.prefix = host-manager.</code>  </p>
-<h5 id="Facility-specific-properties-中需要删除的部分"><a href="#Facility-specific-properties-中需要删除的部分" class="headerlink" title="Facility specific properties 中需要删除的部分"></a>Facility specific properties 中需要删除的部分</h5><h6 id="如下所示-1"><a href="#如下所示-1" class="headerlink" title="如下所示"></a>如下所示</h6><p><code>org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/manager].level = INFO</code><br><code>org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/manager].handlers = 3manager.org.apache.juli.AsyncFileHandler</code></p>
-<p><code>org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/host-manager].level = INFO</code><br><code>org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/host-manager].handlers = 4host-manager.org.apache.juli.AsyncFileHandler</code></p>
-<hr>
-<h4 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h4><p><code>wget http://nginx.org/download/nginx-1.17.6.tar.gz</code></p>
-<h5 id="安装必要插件"><a href="#安装必要插件" class="headerlink" title="安装必要插件"></a>安装必要插件</h5><p><code>yum -y install gcc pcre pcre-devel zlib zlib-devel openssl openssl-devel</code></p>
-<h5 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h5><p><code>tar -zxvf nginx-1.17.6.tar.gz</code></p>
-<h5 id="指定安装路径"><a href="#指定安装路径" class="headerlink" title="指定安装路径"></a>指定安装路径</h5><p><code>./configure --prefix=/usr/local/nginx</code></p>
-<h5 id="编译-1"><a href="#编译-1" class="headerlink" title="编译"></a>编译</h5><p><code>make</code></p>
-<h5 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h5><p><code>make install</code></p>
-<h5 id="进入到安装nginx目录下面的sbin"><a href="#进入到安装nginx目录下面的sbin" class="headerlink" title="进入到安装nginx目录下面的sbin"></a>进入到安装nginx目录下面的sbin</h5><h5 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h5><p><code>./nginx</code></p>
-<h5 id="重启："><a href="#重启：" class="headerlink" title="重启："></a>重启：</h5><p><code>./nginx –s reload</code></p>
-<h5 id="停止："><a href="#停止：" class="headerlink" title="停止："></a>停止：</h5><p><code>./nginx –s stop</code></p>
-<h5 id="测试配置文件是否正常："><a href="#测试配置文件是否正常：" class="headerlink" title="测试配置文件是否正常："></a>测试配置文件是否正常：</h5><p><code>./nginx –t</code></p>
-<h5 id="强制关闭："><a href="#强制关闭：" class="headerlink" title="强制关闭："></a>强制关闭：</h5><p><code>$ pkill nginx</code></p>
-
+          <p>Centos8 服务器环境搭建</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/13/centos8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
