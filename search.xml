@@ -3,7 +3,7 @@
   <entry>
     <title>Centos8 服务器环境搭建</title>
     <url>/2020/08/13/centos8/</url>
-    <content><![CDATA[<p>Centos8 服务器环境搭建</p>
+    <content><![CDATA[<p>mysql tomcat nginx 安装</p>
 <a id="more"></a>
 
 <h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><h5 id="安装Yum-Repository："><a href="#安装Yum-Repository：" class="headerlink" title="安装Yum Repository："></a>安装Yum Repository：</h5><p><code>wget https://repo.mysql.com//mysql80-community-release-el8-1.noarch.rpm</code></p>
@@ -72,8 +72,11 @@
 <h5 id="测试配置文件是否正常："><a href="#测试配置文件是否正常：" class="headerlink" title="测试配置文件是否正常："></a>测试配置文件是否正常：</h5><p><code>./nginx –t</code></p>
 <h5 id="强制关闭："><a href="#强制关闭：" class="headerlink" title="强制关闭："></a>强制关闭：</h5><p><code>$ pkill nginx</code></p>
 ]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>centos8</tag>
       </tags>
   </entry>
   <entry>
@@ -234,14 +237,20 @@ c2(yes)-&gt;io-&gt;e
 c2(no)-&gt;op2-&gt;e
 &amp;```</code></pre>
 ]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
       <tags>
         <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2020/08/12/hello-world/</url>
+    <url>/2020/08/13/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -255,5 +264,11 @@ c2(no)-&gt;op2-&gt;e
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
 </search>
