@@ -235,7 +235,8 @@ cond(yes, right)-&gt;c2
 cond(no)-&gt;sub1(left)-&gt;op1
 c2(yes)-&gt;io-&gt;e
 c2(no)-&gt;op2-&gt;e
-&amp;```</code></pre>
+&amp;```
+</code></pre>
 ]]></content>
       <categories>
         <category>hexo</category>
